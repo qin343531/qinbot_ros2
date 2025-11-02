@@ -1,0 +1,512 @@
+<?xml version="1.0"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="ares_description">
+
+  <link name="base_footprint"/>
+  <joint name="base_footprint_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0.0 0.0 0.0305" rpy="0 0 0"/>
+  </joint> 
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.00854712995827288 7.50823123286115E-05 0.0278826387874229"
+        rpy="0 0 0" />
+      <mass
+        value="1.47866909730804" />
+      <inertia
+        ixx="0.00359269305169571"
+        ixy="-8.39598145870325E-07"
+        ixz="-7.19735156261385E-07"
+        iyy="0.00531725266406624"
+        iyz="-1.98065037762672E-07"
+        izz="0.0088196855009615" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/qin/car_ros2/install/ares_description/share/ares_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.5" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/qin/car_ros2/install/ares_description/share/ares_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="wheel_lf_link">
+    <inertial>
+      <origin
+        xyz="-4.39625921694331E-07 -0.0162659084902607 5.13628381403064E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0886794276290294" />
+      <inertia
+        ixx="3.92675119157611E-05"
+        ixy="3.74356044960118E-10"
+        ixz="-7.07451322647518E-10"
+        iyy="6.39643318644588E-05"
+        iyz="-5.2388634114799E-10"
+        izz="3.92701676775018E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/qin/car_ros2/install/ares_description/share/ares_description/meshes/wheel_lf_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.831372549019608 0.670588235294118 0.129411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/qin/car_ros2/install/ares_description/share/ares_description/meshes/wheel_lf_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_lf_joint"
+    type="continuous">
+    <origin
+      xyz="0.0830030590114571 0.140421402587495 -0.0304989238248535"
+      rpy="0 -0.00263394364873712 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_lf_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="wheel_lb_link">
+    <inertial>
+      <origin
+        xyz="-5.44907836137754E-07 -0.0162659084902607 -3.13654797761201E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0886794276290295" />
+      <inertia
+        ixx="3.92703040942621E-05"
+        ixy="5.67630985690134E-10"
+        ixz="3.45814153356978E-10"
+        iyy="6.39643318644589E-05"
+        iyz="3.03964489622059E-10"
+        izz="3.92673754990008E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/qin/car_ros2/install/ares_description/share/ares_description/meshes/wheel_lb_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.831372549019608 0.670588235294118 0.129411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/qin/car_ros2/install/ares_description/share/ares_description/meshes/wheel_lb_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_lb_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0829993863597804 0.140421402587495 -0.0305002453536649"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_lb_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="wheel_rf_link">
+    <inertial>
+      <origin
+        xyz="6.40314585770296E-07 0.0162659084902607 -2.16984553744887E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0886794276290295" />
+      <inertia
+        ixx="3.92702887056828E-05"
+        ixy="6.25553867752891E-10"
+        ixz="4.05484328471816E-10"
+        iyy="6.39643318644588E-05"
+        iyz="-1.52583437683813E-10"
+        izz="3.92673908875801E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/qin/car_ros2/install/ares_description/share/ares_description/meshes/wheel_rf_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.831372549019608 0.670588235294118 0.129411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/qin/car_ros2/install/ares_description/share/ares_description/meshes/wheel_rf_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_rf_joint"
+    type="continuous">
+    <origin
+      xyz="0.08300268139506 -0.140421402587495 -0.0304986698030348"
+      rpy="0 -0.00263394364873712 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_rf_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="wheel_rb_link">
+    <inertial>
+      <origin
+        xyz="6.48256425143934E-07 0.0162659084902607 -1.91960080457923E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0886794276290295" />
+      <inertia
+        ixx="3.92702528743994E-05"
+        ixy="6.3100639823008E-10"
+        ixz="5.16687721413534E-10"
+        iyy="6.39643318644588E-05"
+        iyz="-1.2818062360589E-10"
+        izz="3.92674267188635E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/qin/car_ros2/install/ares_description/share/ares_description/meshes/wheel_rb_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.831372549019608 0.670588235294118 0.129411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/qin/car_ros2/install/ares_description/share/ares_description/meshes/wheel_rb_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_rb_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0829973671565988 -0.140421402587495 -0.0304986482136361"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_rb_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="laser_link">
+    <inertial>
+      <origin
+        xyz="1.22124532708767E-15 0.00876543145830877 -0.00250332026730749"
+        rpy="0 0 0" />
+      <mass
+        value="0.107022700280528" />
+      <inertia
+        ixx="6.11380932354906E-05"
+        ixy="2.69280795080134E-20"
+        ixz="-7.38436422170397E-21"
+        iyy="3.08411791265506E-05"
+        iyz="9.16001662388333E-06"
+        izz="6.99106364770691E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/qin/car_ros2/install/ares_description/share/ares_description/meshes/laser_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/qin/car_ros2/install/ares_description/share/ares_description/meshes/laser_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="laser_joint"
+    type="fixed">
+    <origin
+      xyz="-0.0345847012629377 -0.0111439360482388 0.1539"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="laser_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="imu_link">
+    <inertial>
+      <origin
+        xyz="1.5730681632603E-05 -2.58884580439656E-12 0.0069271186919872"
+        rpy="0 0 0" />
+      <mass
+        value="0.0174930292617855" />
+      <inertia
+        ixx="2.29106344702598E-06"
+        ixy="-2.75158019061829E-10"
+        ixz="3.7385776517543E-09"
+        iyy="1.93004670084732E-06"
+        iyz="7.24990356031954E-13"
+        izz="3.54077726475881E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/qin/car_ros2/install/ares_description/share/ares_description/meshes/imu_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/qin/car_ros2/install/ares_description/share/ares_description/meshes/imu_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="imu_joint"
+    type="fixed">
+    <origin
+      xyz="0.0860020608223306 0 0.0798"
+      rpy="0 -0.00263394364873712 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="imu_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <!--里程计，参数使用小甲鱼的，只需要关联imu_link即可-->
+  <gazebo reference="imu_link">
+    <sensor name="imu_sensor" type="imu">
+    <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <ros>
+          <namespace>/</namespace>
+          <remapping>~/out:=imu</remapping>
+        </ros>
+        <initial_orientation_as_reference>false</initial_orientation_as_reference>
+      </plugin>
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <imu>
+        <angular_velocity>
+          <x>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>2e-4</stddev>
+              <bias_mean>0.0000075</bias_mean>
+              <bias_stddev>0.0000008</bias_stddev>
+            </noise>
+          </x>
+          <y>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>2e-4</stddev>
+              <bias_mean>0.0000075</bias_mean>
+              <bias_stddev>0.0000008</bias_stddev>
+            </noise>
+          </y>
+          <z>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>2e-4</stddev>
+              <bias_mean>0.0000075</bias_mean>
+              <bias_stddev>0.0000008</bias_stddev>
+            </noise>
+          </z>
+        </angular_velocity>
+        <linear_acceleration>
+          <x>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>1.7e-2</stddev>
+              <bias_mean>0.1</bias_mean>
+              <bias_stddev>0.001</bias_stddev>
+            </noise>
+          </x>
+          <y>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>1.7e-2</stddev>
+              <bias_mean>0.1</bias_mean>
+              <bias_stddev>0.001</bias_stddev>
+            </noise>
+          </y>
+          <z>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>1.7e-2</stddev>
+              <bias_mean>0.1</bias_mean>
+              <bias_stddev>0.001</bias_stddev>
+            </noise>
+          </z>
+        </linear_acceleration>
+      </imu>
+    </sensor>
+  </gazebo>
+
+  <!--激光雷达，参数默认，关联laser_link-->
+  <gazebo reference="laser_link">
+    <sensor name="laser_sensor" type="ray">
+    <always_on>true</always_on>
+    <visualize>true</visualize>
+    <update_rate>10</update_rate>
+    <pose>0 0 0.075 0 0 0</pose>
+    <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1.000000</resolution>
+            <min_angle>0.000000</min_angle>
+            <max_angle>6.280000</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.120000</min>
+          <max>3.5</max>
+          <resolution>0.015000</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+    </ray>
+
+    <plugin name="laserscan" filename="libgazebo_ros_ray_sensor.so">
+      <ros>
+        <remapping>~/out:=scan</remapping>
+      </ros>
+      <output_type>sensor_msgs/LaserScan</output_type>
+      <frame_name>laser_link</frame_name>
+    </plugin>
+    </sensor>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="diff_drive" filename="libgazebo_ros_diff_drive.so">
+
+    <reverse_right_motor>true</reverse_right_motor>
+      <ros>
+        <namespace>/</namespace>
+        <remapping>cmd_vel:=cmd_vel</remapping>
+        <remapping>odom:=odom</remapping>
+      </ros>
+
+      <update_rate>30</update_rate>
+
+      <left_joint>wheel_lf_joint</left_joint>
+      <right_joint>wheel_rf_joint</right_joint>
+
+      <wheel_separation>0.2</wheel_separation>
+      <wheel_diameter>0.065</wheel_diameter>  
+
+      <max_wheel_torque>20</max_wheel_torque>
+      <max_wheel_acceleration>1.0</max_wheel_acceleration>
+
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>true</publish_odom_tf>
+      <publish_wheel_tf>true</publish_wheel_tf>
+      <odometry_frame>odom</odometry_frame>
+      <robot_base_frame>base_footprint</robot_base_frame>
+    </plugin>
+
+  </gazebo> 
+ 
+
+</robot>
