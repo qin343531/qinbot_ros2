@@ -3,7 +3,7 @@
 
 # 安装库
 ```
-pip3 install -y numpy lark empy==3.3.4 catkin_pkg
+pip3 install -y numpy lark empy==3.3.4 catkin_pkg lxml
 ```
 
 # 拉取仓库
@@ -39,4 +39,5 @@ ros2 launch navigation2 turtlebot3_navigation2.launch.py
 之后在rviz2中进行导航即可
 
 ![](./images/nav2.png)
+
 
