@@ -18,10 +18,10 @@ git clone https://github.com/ros-planning/navigation2.git -b humble
 ```
 
 ## 编译
-开始编译
+开始编译，指定1个CPU核心编译，否则电脑容易卡死
 ```
 cd ~/car_ros2
-colcon build
+colcon build --parallel-workers 1 --cmake-args -DBUILD_TESTING=OFF -DCMAKE_CXX_FLAGS="-Wno-error"
 ```
 
 # 脚本启动
@@ -39,3 +39,4 @@ ros2 launch navigation2 turtlebot3_navigation2.launch.py
 之后在rviz2中进行导航即可
 
 ![](./images/nav2.png)
+
