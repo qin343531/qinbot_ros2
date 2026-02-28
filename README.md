@@ -40,4 +40,6 @@ ros2 launch navigation2 turtlebot3_navigation2.launch.py
 
 ![](./images/nav2.png)
 
+# qinbot_ws
+泰山派的ros2节点启动包
 
