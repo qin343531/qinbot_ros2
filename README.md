@@ -4,6 +4,15 @@
 # 安装库
 ```
 pip3 install -y numpy lark empy==3.3.4 catkin_pkg lxml
+sudo apt install -y ros-humble-bondcpp
+sudo apt install -y ros-humble-diagnostic-updater
+sudo apt install -y ros-humble-behaviortree-cpp-v3
+sudo apt install -y libgraphicsmagick++1-dev graphicsmagick-libmagick-dev-compat
+sudo apt install -y libceres-dev
+sudo apt install -y libxtensor-dev
+sudo apt install -y libnanoflann-dev
+sudo apt install -y libompl-dev
+sudo apt install -y ros-humble-gazebo-ros-pkgs
 ```
 
 # 拉取仓库
@@ -42,4 +51,5 @@ ros2 launch navigation2 turtlebot3_navigation2.launch.py
 
 # qinbot_ws
 泰山派的ros2节点启动包
+
 
