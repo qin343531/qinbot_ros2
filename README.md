@@ -42,7 +42,7 @@ ros2 launch ares_description qinbot_dis.launch.py
 
 然后运行`qinbot_navigation2/launch/navigation2.launch.py`脚本
 ```
-ros2 launch navigation2 turtlebot3_navigation2.launch.py
+ros2 launch qinbot_navigation2 navigation2.launch.py
 ```
 这个会启动导航功能，rviz界面
 之后在rviz2中进行导航即可
@@ -51,5 +51,6 @@ ros2 launch navigation2 turtlebot3_navigation2.launch.py
 
 # qinbot_ws
 泰山派的ros2节点启动包
+
 
 
