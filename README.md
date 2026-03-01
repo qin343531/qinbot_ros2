@@ -50,7 +50,9 @@ ros2 launch qinbot_navigation2 navigation2.launch.py
 ![](./images/nav2.png)
 
 # qinbot_ws
-泰山派的ros2节点启动包
+泰山派的ros2节点启动包，包括，slam建图，ros2的键盘控制，nav2的路径规划，激光雷达的驱动
+# ros2
+包括视频流和空气传感器的上传
 
 
 
