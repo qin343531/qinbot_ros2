@@ -4,25 +4,18 @@
 # 安装库
 ```
 pip3 install -y numpy lark empy==3.3.4 catkin_pkg lxml
-sudo apt install -y ros-humble-bondcpp
-sudo apt install -y ros-humble-diagnostic-updater
-sudo apt install -y ros-humble-behaviortree-cpp-v3
-sudo apt install -y libgraphicsmagick++1-dev graphicsmagick-libmagick-dev-compat
-sudo apt install -y libceres-dev
-sudo apt install -y libxtensor-dev
-sudo apt install -y libnanoflann-dev
-sudo apt install -y libompl-dev
-sudo apt install -y ros-humble-gazebo-ros-pkgs
 ```
 
 # 拉取仓库
 ```
-git clone https://github.com/qin343531/car_ros2.git
+git clone https://github.com/qin343531/qinbot_ros2.git
 ```
+
+# 解压qinbot_ros2.7z
 
 ## 拉取navaigation2
 ```
-cd car_ros2/src/
+cd qinbot_ros2/src/
 git clone https://github.com/ros-planning/navigation2.git -b humble
 ```
 
@@ -33,7 +26,7 @@ cd ~/car_ros2
 colcon build --parallel-workers 1 --cmake-args -DBUILD_TESTING=OFF -DCMAKE_CXX_FLAGS="-Wno-error"
 ```
 
-# 脚本启动
+# gazebo仿真脚本启动
 首先要运行`ares_description/launch/qinbot_dis.launch.py`脚本
 ```
 ros2 launch ares_description qinbot_dis.launch.py
@@ -54,5 +47,53 @@ ros2 launch qinbot_navigation2 navigation2.launch.py
 # ros2
 包括视频流和空气传感器的上传
 
+# 真机运行
+泰山派端运行这段脚本
+```
+ros2 launch qinbot_car qinbot_bringup.launch.py -time_offset=-1.3
+# 或者运行脚本
+./start.sh
+```
+首先要检查一下泰山派与PC机的系统时间戳是否正确，在泰山派开启脚本后，PC运行脚本检查
+```
+qin@DESKTOP-CFJHFGS:~$ python monitor_laser_timestamp.py 
+================================================================================
+激光时间戳(秒)             系统当前时间(秒)            时间差(秒)          状态        
+================================================================================
+1772511324.214678    1772511324.235621    0.020943        ✅ 正常      
+```
+正常即可继续，否则根据时间差，调整泰山派time_offset的参数
+
+PC端运行发布TF树脚本
+```
+ros2 launch qinbot_bringup qinbot_bringup.launch.py
+```
+PC端开启nav2路径规划
+```
+ros2 launch qinbot_navigation2 navigation2.launch.py
+```
+之后即可以开始进行路径规划了
+
+# 建图
+泰山派步骤与真机运行一致
+```
+ros2 launch qinbot_car qinbot_bringup.launch.py -time_offset=-1.3
+# 或者运行脚本
+./start.sh
+```
+PC运行slam_toolbox包
+```
+ros2 launch slam_toolbox online_async_launch.py
+```
+打开rviz2,然后执行
+```
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+```
+
+# 保存地图
+运行指令保存地图
+```
+ros2 run nav2_map_server map_saver_cli -t map -f qinbot_map
+```
 
 
