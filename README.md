@@ -85,6 +85,10 @@ PC运行slam_toolbox包
 ```
 ros2 launch slam_toolbox online_async_launch.py
 ```
+PC端运行发布TF树脚本
+```
+ros2 launch qinbot_bringup qinbot_bringup.launch.py
+```
 打开rviz2,然后执行
 ```
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
@@ -95,5 +99,6 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 ros2 run nav2_map_server map_saver_cli -t map -f qinbot_map
 ```
+
 
 
